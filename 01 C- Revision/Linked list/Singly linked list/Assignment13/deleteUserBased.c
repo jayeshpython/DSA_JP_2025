@@ -12,17 +12,18 @@ typedef struct Node{
 
 Node* create(Node*);
 void display(Node*);
-Node* insertNewNode(Node*);
+Node* deleteNodeByKey(Node*);
 void freeList(Node*);
 
 int main(){
 
     Node* start = NULL;
     start = create(start);
+    printf("\nLinked list before deleting");
     display(start);
 
-    start = insertNewNode(start);
-    printf("\n\nLinked list after inserting new node");
+    start = deleteNodeByKey(start);
+    printf("\nLinked List after deleting node.");
     display(start);
     freeList(start);
 
@@ -71,53 +72,41 @@ void freeList(Node* head) {
     }
 }
 
-Node* insertNewNode(Node* head){
+Node* deleteNodeByKey(Node* head){
 
-    Node* nw, *p = head;
-    int key, flag =0;
+    Node* p = head;
+    Node* q = head;
+    int key, flag = 0;
 
-    printf("\nEnter position of node to add: ");
+    if (head == NULL) {
+        printf("\nList is empty!\n");
+        return NULL;
+    }
+
+    printf("\nEnter the key element: ");
     scanf("%d", &key);
 
-    nw = (Node*)malloc(sizeof(Node));
-    printf("\nEnter name and number to insert: ");
-    scanf("%s %d", nw->name, &nw->no);
-
-    // Insert at head
-    if(head == NULL){
-        nw->next = head;
-        head = nw;
-        return head;
+    if(head->no == key ){
+        head = head-> next;
+        free(p);
+       return head; 
     }
 
-    for(int i = 1; i< key - 1 && p != NULL; p = p->next, i++);
+   while(p->next != NULL){
+        q = p->next;
 
-    if(p != NULL){
-        nw->next = p->next;
-        p->next = nw;
-    }
-    else{
-        printf("\nInvalid key option: ");
-        free(nw);
-    }
-    return head;
-
+        if(q->no == key){
+            p->next = q->next;
+            free(q);
+            flag = 1;
+            return head;
+        }
+        
+        p = p->next;
+   }
+   if(flag == 0){
+        printf("\nKey %d do not found in the list. ", key);
+   }
 }
 
-/*
-int i =1;
-
-while(p != NULL && i < key - 1){
-
-    if(p != NULL){
-        nw->next = p->next;
-        p->next = nw;
-    }
-    else{
-        printf("\nInvalid key option");
-        free(nw);
-    }
-    return head;
-}
-
-*/
+   

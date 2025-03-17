@@ -23,6 +23,7 @@ int main(){
     display(start);
 
     start = deleteNodeAtAnyPosition(start);
+    printf("\nLinked List after deleting node.");
     display(start);
     freeList(start);
 
@@ -73,23 +74,41 @@ void freeList(Node* head) {
 
 Node* deleteNodeAtAnyPosition(Node* head){
 
-    Node* nw, *p = head;
-    int key, flag =0;
+    Node* temp = head;
+    Node* p = head;
+    Node* q = head->next;
+    int pos, flag =0;
 
     printf("\nEnter position of node to delete: ");
-    scanf("%d", &key);
+    scanf("%d", &pos);
 
-    while(p != NULL && p->next != NULL){
+    if(head == NULL){
+        printf("\nList is empty.");
+        return head;
+    }
 
-        if(key == p->no){
-            free(p);
-            flag = 1;
-            break;
+    if( pos == 1){
+        head = head-> next;
+        free(p);
+       return head; 
+    }
+
+     // Method 1
+    for(int i = 2; q != NULL && i <= pos; i++){
+        
+        if(i == pos){
+            p->next = q->next;
+            free(q);
+            return head;
         }
+        p = q;
+        q = q->next;
     }
-    if(flag == 0){
-        printf("\nNo node is deleted.");
+    
+    if(p == NULL){
+        printf("\nNo node in linked list.");
     }
-    head = head->next;
     return head;
 }
+
+

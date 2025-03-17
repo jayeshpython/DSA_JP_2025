@@ -12,17 +12,18 @@ typedef struct Node{
 
 Node* create(Node*);
 void display(Node*);
-Node* insertNewNode(Node*);
+Node* reverse(Node*);
 void freeList(Node*);
 
 int main(){
 
     Node* start = NULL;
     start = create(start);
+    printf("\nLinked list before deleting");
     display(start);
 
-    start = insertNewNode(start);
-    printf("\n\nLinked list after inserting new node");
+    start = reverse(start);
+    printf("\nLinked List after reversing.");
     display(start);
     freeList(start);
 
@@ -71,53 +72,11 @@ void freeList(Node* head) {
     }
 }
 
-Node* insertNewNode(Node* head){
 
-    Node* nw, *p = head;
-    int key, flag =0;
+Node* reverse(Node* head){
 
-    printf("\nEnter position of node to add: ");
-    scanf("%d", &key);
-
-    nw = (Node*)malloc(sizeof(Node));
-    printf("\nEnter name and number to insert: ");
-    scanf("%s %d", nw->name, &nw->no);
-
-    // Insert at head
-    if(head == NULL){
-        nw->next = head;
-        head = nw;
-        return head;
-    }
-
-    for(int i = 1; i< key - 1 && p != NULL; p = p->next, i++);
-
-    if(p != NULL){
-        nw->next = p->next;
-        p->next = nw;
-    }
-    else{
-        printf("\nInvalid key option: ");
-        free(nw);
-    }
-    return head;
+    Node* p = head;
+    
+    
 
 }
-
-/*
-int i =1;
-
-while(p != NULL && i < key - 1){
-
-    if(p != NULL){
-        nw->next = p->next;
-        p->next = nw;
-    }
-    else{
-        printf("\nInvalid key option");
-        free(nw);
-    }
-    return head;
-}
-
-*/
