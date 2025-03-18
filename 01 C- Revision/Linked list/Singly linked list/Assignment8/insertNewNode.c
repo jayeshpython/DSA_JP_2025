@@ -103,21 +103,3 @@ Node* insertNewNode(Node* head){
     return head;
 
 }
-
-/*
-int i =1;
-
-while(p != NULL && i < key - 1){
-
-    if(p != NULL){
-        nw->next = p->next;
-        p->next = nw;
-    }
-    else{
-        printf("\nInvalid key option");
-        free(nw);
-    }
-    return head;
-}
-
-*/

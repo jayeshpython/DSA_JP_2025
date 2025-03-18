@@ -12,18 +12,17 @@ typedef struct Node{
 
 Node* create(Node*);
 void display(Node*);
-Node* reverse(Node*);
+Node* reverseList(Node*);
 void freeList(Node*);
 
 int main(){
 
     Node* start = NULL;
     start = create(start);
-    printf("\nLinked list before deleting");
     display(start);
 
-    start = reverse(start);
-    printf("\nLinked List after reversing.");
+    start = reverseList(start);
+    printf("\n\nLinked list after inserting reversing");
     display(start);
     freeList(start);
 
@@ -72,11 +71,19 @@ void freeList(Node* head) {
     }
 }
 
-
-Node* reverse(Node* head){
-
+// Reverse Linked List
+Node* reverseList(Node* head) {
+    Node* q = NULL;
     Node* p = head;
-    
-    
+    Node* next = NULL;
 
+    while (p != NULL) {
+        next = p->next;  
+        p->next = q; 
+        q = p;        
+        p = next;       
+    }
+
+    return q; 
 }
+

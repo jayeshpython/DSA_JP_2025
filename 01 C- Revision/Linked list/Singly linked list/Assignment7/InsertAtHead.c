@@ -83,10 +83,13 @@ Node* InsertAtHead(Node* head){
         nw = (Node*)malloc(sizeof(Node));
         printf("\nEnter name and number for new to node to insert: ");
         scanf("%s %d", nw->name, &nw->no);
-
         nw->next = NULL;
-        nw ->next = head;
-        head = nw;
 
-        return head;
+        if(head == NULL){   
+            nw ->next = head;
+            head = nw;
+            return head;
+        }
+
+        for(int i = 1;)
 }
