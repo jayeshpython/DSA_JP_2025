@@ -105,8 +105,9 @@ Node* deleteNodeAtAnyPosition(Node* head){
         q = q->next;
     }
     
-    if(p == NULL){
-        printf("\nNo node in linked list.");
+    if(p->next == NULL){
+        printf("\nInvalid position!");
+        return head;
     }
     return head;
 }

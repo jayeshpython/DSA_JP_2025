@@ -84,7 +84,7 @@ Node* insertNewNode(Node* head){
     scanf("%s %d", nw->name, &nw->no);
 
     // Insert at head
-    if(head == NULL){
+    if(key == 1){
         nw->next = head;
         head = nw;
         return head;
