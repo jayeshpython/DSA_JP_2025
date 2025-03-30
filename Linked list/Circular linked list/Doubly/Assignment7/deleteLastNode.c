@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 typedef struct Doubly{
-    int no; 
+    int no;
     char name[20];
     struct Doubly* next;
     struct Doubly* prev;
@@ -14,13 +14,19 @@ typedef struct Doubly{
 dsl* create(dsl*);
 void display(dsl*);
 void freeList(dsl*);
+dsl* deletion(dsl*);
 
 int main(){
 
     dsl* last = NULL;
     last = create(last);
     display(last);
+
+    printf("\n\n\tlinked list after deleting new node");
+    last = deletion(last);
+    display(last);
     freeList(last);
+
     return 0;
 }
 
@@ -58,31 +64,51 @@ dsl* create(dsl* last){
 void display(dsl* last){
 
     if(!last){
-        printf("\n\tList is empty.");
+        printf("\n\tList is empty");
         return;
     }
-
-    printf("\n\tDoubly linked list");
-    dsl* p = last->next;
+    dsl* p =last->next;
 
     do{
         printf("\n\tNumber = %d, Name = %s", p->no, p->name);
         p = p->next;
-    } while (p != last->next);
+    } while(p != last->next);
 }
 
 void freeList(dsl* last){
-
-    if(last == NULL)
-    return;
 
     dsl* temp;
     dsl* p = last->next;
 
     do{
-        temp = p;
+         temp = p;
         p = p->next;
         free(temp);
-    } while(p != last->next);
-    printf("\n\tMemory frred successfully.");
+    } while(p != last);
+    free(last);
+    printf("\n\tMemory freed successfully!");
+}
+
+dsl* deletion(dsl* last){
+
+    if(last == NULL){
+        printf("\n\tList is empty");
+        return NULL;
+    }
+     //delete when its only one node
+     if (last->next == last) {
+        free(last);
+        return NULL;
+    }
+
+    dsl* p = last;
+    dsl* q = last->prev;
+
+    //Delete last node
+    q->next = last->next;
+    last->next->prev = q;
+   
+    free(p);
+    return q;
+
 }

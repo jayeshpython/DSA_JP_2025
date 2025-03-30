@@ -14,11 +14,16 @@ typedef struct Doubly{
 dsl* create(dsl*);
 void display(dsl*);
 void freeList(dsl*);
+dsl* insertAtHead(dsl*);
 
 int main(){
 
     dsl* last = NULL;
     last = create(last);
+    display(last);
+
+    printf("\n\n\t Inserting new node at begining");
+    last = insertAtHead(last);
     display(last);
     freeList(last);
     return 0;
@@ -84,5 +89,24 @@ void freeList(dsl* last){
         p = p->next;
         free(temp);
     } while(p != last->next);
-    printf("\n\tMemory frred successfully.");
+    printf("\n\tMemory freed successfully.");
+}
+
+dsl* insertAtHead(dsl* last){
+
+    if(last == NULL){
+        printf("\n\tList is empty.");
+        return NULL;
+    }
+
+    dsl* newNode = (dsl*)malloc(sizeof(dsl));
+    printf("\n\tEnter number and name: ");
+    scanf("%d %s", &newNode->no, newNode->name);
+
+    //Insert at beginning
+    newNode->next = last->next;
+    last->next = newNode;
+    newNode->prev = last;
+  
+    return last;
 }

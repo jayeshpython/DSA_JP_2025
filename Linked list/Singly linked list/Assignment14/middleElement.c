@@ -12,7 +12,7 @@ typedef struct Node{
 
 Node* create(Node*);
 void display(Node*);
-Node* deleteMiddleNode(Node*);
+void printMiddleNode(Node*);
 void freeList(Node*);
 
 int main(){
@@ -22,9 +22,7 @@ int main(){
     printf("\nLinked list before deleting");
     display(start);
 
-    start = deleteMiddleNode(start);
-    printf("\nLinked List after deleting middle node.");
-    display(start);
+    printMiddleNode(start);
     freeList(start);
 
     return 0;
@@ -72,14 +70,14 @@ void freeList(Node* head) {
     }
 }
 
-Node* deleteMiddleNode(Node* head){
+void printMiddleNode(Node* head){
 
     Node* fast = head;
     Node* slow = head;
     Node* prev = NULL;
 
     if(head == NULL){
-        return NULL;
+        return;
     }
 
     while(fast != NULL && fast->next != NULL){
@@ -89,6 +87,7 @@ Node* deleteMiddleNode(Node* head){
     }
 
     prev->next = slow->next;
-    free(slow);
-    return head;
+    printf("\n\tMiddle element of linked list:\n ");
+    printf("\n\tNumber = %d, Name = %s", slow->no, slow->name);
+   
 }

@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 typedef struct Doubly{
-    int no; 
+    int no;
     char name[20];
     struct Doubly* next;
     struct Doubly* prev;
@@ -14,13 +14,19 @@ typedef struct Doubly{
 dsl* create(dsl*);
 void display(dsl*);
 void freeList(dsl*);
+dsl* deletion(dsl*);
 
 int main(){
 
     dsl* last = NULL;
     last = create(last);
     display(last);
+
+    printf("\n\tlinked list after inserting new node");
+    last = deletion(last);
+    display(last);
     freeList(last);
+
     return 0;
 }
 
@@ -58,31 +64,73 @@ dsl* create(dsl* last){
 void display(dsl* last){
 
     if(!last){
-        printf("\n\tList is empty.");
+        printf("\n\tList is empty");
         return;
     }
-
-    printf("\n\tDoubly linked list");
-    dsl* p = last->next;
+    dsl* p =last->next;
 
     do{
         printf("\n\tNumber = %d, Name = %s", p->no, p->name);
         p = p->next;
-    } while (p != last->next);
+    } while(p != last->next);
 }
 
 void freeList(dsl* last){
-
-    if(last == NULL)
-    return;
 
     dsl* temp;
     dsl* p = last->next;
 
     do{
-        temp = p;
+         temp = p;
         p = p->next;
         free(temp);
-    } while(p != last->next);
-    printf("\n\tMemory frred successfully.");
+    } while(p != last);
+    free(last);
+    printf("\n\tMemory freed successfully!");
+}
+
+dsl* deletion(dsl* last){
+
+    if(last == NULL){
+        printf("\n\tList is empty");
+        return NULL;
+    }
+
+    int pos;
+    printf("\n\tEnter positon to be deleted: ");
+    scanf("%d", &pos);
+
+    dsl* p = last->next;
+    dsl* q = last;
+
+    // delete When its only node
+    if(last->next == last){
+        free(p);
+        return NULL;
+    }
+
+    //Delete first node
+    if(pos == 1){
+        last->next = p->next;
+        p->next->prev = last;
+        free(p);
+        return last;
+    }
+
+    //Delete middle node
+    for(int i = 1; i < pos && p != last; i++){
+        p = p->next;
+        q = q->next;
+    }
+    q->next = p->next;
+    p->next->prev = q;
+
+    //Delete last node
+    if(p == last){
+        last = q;
+    }
+
+    free(p);
+    return last;
+
 }

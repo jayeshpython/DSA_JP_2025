@@ -22,7 +22,7 @@ int main(){
     display(start);
 
     start = reverseList(start);
-    printf("\n\nLinked list after inserting reversing");
+    printf("\n\nLinked list after reversing");
     display(start);
     freeList(start);
 
