@@ -101,21 +101,25 @@ DNode* insertAtPosition(DNode* head){
     //Insert at head
     if(pos == 1){
         newNode->next = head;
+
+        if(head != NULL)
         head->prev = newNode;
+        
         head = newNode;
         return head;
     }
 
     DNode* p = head;
-    for(int i = 1; p->next && i < pos-1; i++)
+    for(int i = 1; p->next && i < pos-1; i++){
         p = p->next;
+    }
 
-        newNode->next = p->next;
-        if(p->next != NULL){
-            p->next->prev = newNode;
-        }
-        p->next = newNode;
-        newNode->prev = p;
+    newNode->next = p->next;
+    if(p->next != NULL){
+        p->next->prev = newNode;
+    }
+    p->next = newNode;
+    newNode->prev = p;
 
-        return head;
+    return head;
 }

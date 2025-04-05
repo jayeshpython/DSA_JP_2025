@@ -14,14 +14,17 @@ typedef struct DNode{
 DNode* create(DNode*);
 void display(DNode*);
 void freeList(DNode*);
-//void duplicateValues(DNode*);
+DNode* duplicateValues(DNode*);
 
 int main(){
 
     DNode* start = NULL;
     start = create(start);
     display(start);
-    //duplicateValues(start);
+
+    printf("\n\tLinked list after deleting duplicate elements: ");
+    start = duplicateValues(start);
+    display(start);
     freeList(start);
     return 0;
 }
@@ -57,7 +60,7 @@ DNode* create(DNode* head){
 void display(DNode* head){
 
     if(!head){
-        printf("\n]tList is empty.");
+        printf("\n]\tList is empty.");
         return;
     }
 
@@ -70,10 +73,53 @@ void display(DNode* head){
 void freeList(DNode* head){
 
     DNode* temp;
-    while(temp != NULL){
+    while(head != NULL){
         temp = head;
         head = head->next;
         free(temp);
     }
     printf("\n\tMemory freed successfully!");
+}
+
+DNode* duplicateValues(DNode* head){
+
+    if(!head){
+        printf("\n\tLinked list is empty.");
+        return NULL;
+    }
+
+    DNode* p = head;
+    DNode* q = head;
+    int temp;
+    char tempName[20];
+
+    for(p = head ; p != NULL ; p = p->next){
+        for( q = p->next ; q != NULL; q = q->next){
+
+            if(p->no > q->no){
+                temp = p->no;
+                p->no = q->no;
+                q->no = temp;
+
+                strcpy(tempName, p->name);
+                strcpy(p->name, q->name);
+                strcpy(q->name, tempName);
+            }
+        }
+    }
+
+    for(DNode* p = head; p != NULL && p->next != NULL; p = p->next){
+        if(p->no == p->next->no){
+
+            DNode* q = p->next;
+            p->next = q->next;
+
+            if(q->next != NULL){
+                q->next->prev = p;
+            }
+            free(q);
+            p = head;
+        }
+    }
+    return head;
 }
