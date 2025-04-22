@@ -12,12 +12,11 @@ int main() {
     printf("Enter the size: ");
     scanf("%d", &size);
 
- 
     ch = (char*)malloc(sizeof(char) * (size + 1));
     str = (char*)malloc(sizeof(char) * (size + 1));
 
     printf("Enter the string: ");
-    scanf(" ");
+    getchar(); // fix: to consume the leftover newline
     scanf("%[^\n]", ch); 
 
     copyString(ch, str);
@@ -37,7 +36,3 @@ void copyString(char *ch, char *str) {
     }
     str[i] = '\0'; 
 }
-
-for(int i=0; a[i] != '\0'; i++){
-	a[i] = ch[i];
-	
