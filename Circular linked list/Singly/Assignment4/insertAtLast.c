@@ -96,6 +96,12 @@ scl* insertion(scl* last) {
     printf("\n\tEnter number and name: ");
     scanf("%d %s", &newNode->no, newNode->name);
 
+    if(last == NULL){
+        last = newNode;
+        last->next = last;
+        return last;
+    }
+
     // Inserting at last position
     newNode->next = last->next;
     last->next = newNode;

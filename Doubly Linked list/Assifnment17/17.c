@@ -78,3 +78,8 @@ void freeList(DNode* head) {
     }
     printf("\n\tMemory Freed Successfully!\n");
 }
+
+DNode* adjustData(DNode* head){
+
+        
+}

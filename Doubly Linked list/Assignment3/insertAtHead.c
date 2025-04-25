@@ -91,6 +91,16 @@ DNode* insertAtHead(DNode* head){
         return head;
     }
 
+    int pos;
+    printf("\n\tEnter position: ");
+    scanf("%d", &pos);
+
+    if(pos != 1){
+        printf("\n\tInvalid position");
+        return head;
+    }
+    
+
     newNode->prev = NULL;
     newNode->next = NULL;
 

@@ -134,6 +134,11 @@ scl* insertion(scl* last){
     printf("\n\tEnter position to insert the node: ");
     scanf("%d", &pos);
 
+    if(pos <= 0){
+        printf("\n\tInvalid position!");
+        free(newNode);
+        return last;
+    }
      // Insert when list is empty
     if (last == NULL) {
         newNode->next = newNode;
@@ -164,7 +169,7 @@ scl* insertion(scl* last){
     return last;
 }
 
-
+        
 scl* deletion(scl* last){
 
     if(last == NULL){
@@ -172,39 +177,35 @@ scl* deletion(scl* last){
         return NULL;
     }
 
-    int pos;
-    printf("\n\tEnter position of node to be deleted: ");
-    scanf("%d", &pos);
+    int key;
+    printf("\n\tEnter key to delete: ");
+    scanf("%d", &key);
 
     scl* p = last->next;
     scl* q = last;
-    //delete when its only one node
-    if(last->next == last){
-        free(p);
+
+    //when only one node
+    if(last->next == last && last->no == key){
+        free(last);
         return NULL;
     }
 
-    scl* temp = last->next;
-    //deleting first node
-    if(pos == 1){
-        last->next = temp->next;
-        free(temp);
-        return last;
-    }
+    while(p != last){
 
-    // deleting a middle node
-    for(int i = 1; i < pos && p != last; i++){
+        if(p->no == key){
+            q->next = p->next;
+            free(p);
+            return last;
+        }
+        q = p;
         p = p->next;
-        q = q->next;
     }
-    q->next = p->next;
-    
-    //deleting last node
-    if(p == last){
+      // delete last node
+    if(last->no == key){
         q->next = p->next;
-        last = q;
+        free(last);
+        last = p;
     }
-    free(p);
     return last;
-    
 }
+

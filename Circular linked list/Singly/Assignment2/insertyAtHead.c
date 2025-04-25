@@ -109,4 +109,6 @@ scl* insertion(scl* last) {
     // Insert at first position
     newNode->next = last->next;
     last->next = newNode;
+
+    return last;
 }
