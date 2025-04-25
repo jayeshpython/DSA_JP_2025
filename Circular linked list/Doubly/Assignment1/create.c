@@ -76,13 +76,13 @@ void freeList(dsl* last){
     if(last == NULL)
     return;
 
-    dsl* temp;
     dsl* p = last->next;
+    last->next == NULL;
 
-    do{
-        temp = p;
+    while(p != NULL){
+        dsl* temp = p;
         p = p->next;
         free(temp);
-    } while(p != last->next);
+    }
     printf("\n\tMemory frred successfully.");
 }

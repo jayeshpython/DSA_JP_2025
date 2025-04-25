@@ -96,41 +96,37 @@ dsl* deletion(dsl* last){
         return NULL;
     }
 
-    int pos;
-    printf("\n\tEnter positon to be deleted: ");
-    scanf("%d", &pos);
+    int key;
+    printf("\n\tEnter key: ");
+    scanf("%d", &key);
 
     dsl* p = last->next;
     dsl* q = last;
 
     // delete When its only node
-    if(last->next == last){
+    if(last->next == last && last->no == key){
         free(p);
         return NULL;
     }
 
-    //Delete first node
-    if(pos == 1){
-        last->next = p->next;
-        p->next->prev = last;
-        free(p);
-        return last;
-    }
+    while(p != last){
 
-    //Delete middle node
-    for(int i = 1; i < pos && p != last; i++){
+        if(p->no == key){
+            q->next = p->next;
+            p->next->prev = q;
+            free(p);
+            return last;
+        }
+        q = p;
         p = p->next;
-        q = q->next;
-    }
-    q->next = p->next;
-    p->next->prev = q;
-
-    //Delete last node
-    if(p == last){
-        last = q;
     }
 
-    free(p);
+    //delete last node
+    if(last->no == key){
+        q->next = p->next;
+        p->next->prev = q;
+        free(last);
+        last = p;
+    }
     return last;
-
 }

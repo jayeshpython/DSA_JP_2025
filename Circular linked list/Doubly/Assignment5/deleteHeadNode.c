@@ -22,7 +22,7 @@ int main(){
     last = create(last);
     display(last);
 
-    printf("\n\tLinked list after deleting a node");
+    printf("\n\n\tLinked list after deleting a node");
     last = deletion(last);
     display(last);
     freeList(last);
@@ -81,14 +81,14 @@ void freeList(dsl* last){
     if(last == NULL)
     return;
 
-    dsl* temp;
     dsl* p = last->next;
+    last->next = NULL;
 
-    do{
-        temp = p;
+    while(p != NULL){
+        dsl* temp = p;
         p = p->next;
         free(temp);
-    } while(p != last->next);
+    }
     printf("\n\tMemory frred successfully.");
 }
 
@@ -100,7 +100,7 @@ dsl* deletion(dsl* last){
     dsl* temp = last->next;
 
     //When its only node
-    if(last->next == NULL){
+    if(temp == last){
         free(temp);
         return NULL;
     }
