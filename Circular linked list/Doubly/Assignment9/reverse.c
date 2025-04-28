@@ -96,7 +96,7 @@ sll* reverse(sll* last) {
     sll* current = last->next;
     sll* temp;
 
-    do {
+    while()
         temp = current->next;
         current->next = current->prev;
         current->prev = temp;
