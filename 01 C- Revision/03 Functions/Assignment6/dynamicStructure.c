@@ -11,12 +11,14 @@ typedef struct Student {
 
 void accept(stud* ptr, int size);
 void display(stud* ptr, int size);
+void searchForParticularStudent(stud* ptr, int size);
 
 int main() {
-    int size = 5;
+    int size = 3;
     stud* ptr = (stud*)malloc(sizeof(stud) * size);
     accept(ptr, size);
     display(ptr, size);
+    searchForParticularStudent(ptr, size);
 
     free(ptr); 
     return 0;
@@ -39,5 +41,29 @@ void display(stud* ptr, int size) {
         printf("\nName: %s", ptr[i].name);
         printf("\nRoll no: %d", ptr[i].rollNo);
         printf("\nMarks: %.2f\n", ptr[i].marks);
+    }
+}
+
+void searchForParticularStudent(stud* ptr, int size) {
+    
+    int roll;
+    int found = 0;
+
+    printf("\nEnter roll number to search: ");
+    scanf("%d", &roll);
+
+    for (int i = 0; i < size; i++) {
+        if (ptr[i].rollNo == roll) {
+            printf("\n--- Student Found ---");
+            printf("\nName: %s", ptr[i].name);
+            printf("\nRoll no: %d", ptr[i].rollNo);
+            printf("\nMarks: %.2f\n", ptr[i].marks);
+            found = 1;
+            break;
+        }
+    }
+
+    if (!found) {
+        printf("\nStudent with roll number %d not found.\n", roll);
     }
 }

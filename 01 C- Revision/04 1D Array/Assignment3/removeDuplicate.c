@@ -33,11 +33,19 @@ int main(){
 #include <stdio.h>
 int main(){
 
-	int arr[9] = {1,2,4,1,3,2,5,4,2};
-	int i, j, temp;
+	int arr[9];
+	int i, j, temp,size;
+
+	printf("\n\tEnter the size: ");
+	scanf("%d", &size);
+
+	printf("\n\tEnter the elements: ");
+	for(int i = 0; i<size; i++){
+		scanf("%d", &arr[i]);
+	}
 	
-	for(int i=0; i<9; i++){
-		for(int j=i+1; j<9; j++){
+	for(int i=0; i<size; i++){
+		for(int j=i+1; j<size; j++){
 			if(arr[i] > arr[j]){
 				temp = arr[i];
 				arr[i] = arr[j];
@@ -46,7 +54,7 @@ int main(){
 		}
 	}
 	printf("Removed duplicate elements are\n"); 
-    for (int i=0; i<9; i++) {
+    for (int i=0; i<size; i++) {
         if (arr[i] != arr[i - 1]) {
             printf("%d ", arr[i]);
         }

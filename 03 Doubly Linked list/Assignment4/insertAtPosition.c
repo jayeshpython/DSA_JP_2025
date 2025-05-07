@@ -98,6 +98,12 @@ DNode* insertAtPosition(DNode* head){
     newNode->prev = NULL;
     newNode->next = NULL;
 
+    if (pos <= 0) {
+        printf("\n\tInvalid position!");
+        free(newNode);
+        return head;
+    }
+
     //Insert at head
     if(pos == 1){
         newNode->next = head;
