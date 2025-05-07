@@ -125,7 +125,9 @@ scl* deletion(scl* last){
         q->next = p->next;
         free(last);
         last = p;
+        return last;
     }
+    printf("\n\tKey not found.");
     return last;
 }
 

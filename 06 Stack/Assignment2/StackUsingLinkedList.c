@@ -44,6 +44,7 @@ int main(){
 
             case 4:
             freeStack(top);
+            exit(0);
             break;
 
             default:
@@ -98,7 +99,7 @@ void freeStack(stk* p){
 
     while(p){
         stk* temp = p;
-        temp = temp->next;
+        p = p->next;
         free(temp);
     }
     printf("\n\tMemory freed successfully");

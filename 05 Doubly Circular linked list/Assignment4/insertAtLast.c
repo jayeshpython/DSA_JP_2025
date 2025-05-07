@@ -14,7 +14,7 @@ typedef struct Doubly{
 dsl* create(dsl*);
 void display(dsl*);
 void freeList(dsl*);
-dsl* insertAtPosition(dsl*);
+dsl* insertAtLast(dsl*);
 
 int main(){
 
@@ -23,7 +23,7 @@ int main(){
     display(last);
 
     printf("\n\n\tInserting a new node in linked list");
-    last = insertAtPosition(last);
+    last = insertAtLast(last);
     display(last);
     freeList(last);
     return 0;
@@ -92,7 +92,7 @@ void freeList(dsl* last){
    } while(p != last->next);
 }
 
-dsl* insertAtPosition(dsl* last){
+dsl* insertAtLast(dsl* last){
 
     if(last == NULL){
         printf("\n\tList is empty.");
@@ -105,6 +105,7 @@ dsl* insertAtPosition(dsl* last){
 
     //When list is empty
     if(last == NULL){
+        last = newNode;
         last->next = last;
         last->prev = last;
         return newNode;

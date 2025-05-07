@@ -97,15 +97,13 @@ scl* insertion(scl* last) {
     scanf("%d %s", &newNode->no, newNode->name);
 
     if(last == NULL){
-        last = newNode;
-        last->next = last;
-        return last;
-    }
-
+       newNode->next = newNode;
+       last = newNode;
+    }else{
     // Inserting at last position
-    newNode->next = last->next;
-    last->next = newNode;
-    last = newNode;
-
+        newNode->next = last->next;
+        last->next = newNode;
+        last = newNode;
+    }
     return last;
 }

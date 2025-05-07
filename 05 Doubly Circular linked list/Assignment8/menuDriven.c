@@ -217,6 +217,8 @@ dsl* deletion(dsl* last){
         p->next->prev = q;
         free(last);
         last = p;
+        return last;
     }
+    printf("\n\tKey not found.");
     return last;
 }

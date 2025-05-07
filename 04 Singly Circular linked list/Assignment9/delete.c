@@ -103,6 +103,18 @@ scl* deletion(scl* last){
 
     scl* p = last->next;
     scl* q = last;
+
+    int count = 1;
+    scl* tempCount = last->next;
+    while (tempCount != last) {
+        count++;
+        tempCount = tempCount->next;
+    }
+    if (pos < 1 || pos > count) {
+        printf("\n\tInvalid position.");
+        return last;
+    }
+
     //delete when its only one node
     if(last->next == last){
         free(p);

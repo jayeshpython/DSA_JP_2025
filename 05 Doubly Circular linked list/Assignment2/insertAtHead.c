@@ -104,15 +104,17 @@ dsl* insertAtHead(dsl* last){
     scanf("%d %s", &newNode->no, newNode->name);
 
     if(last == NULL){
-        last = newNode;
-        last->next = last;
-        last->prev = last;
+       newNode->next = newNode;
+       newNode->prev = newNode;
+       last = newNode;
+       return last;
     }
 
     //Insert at beginning
     newNode->next = last->next;
-    last->next = newNode;
+    last->next->prev = newNode;
     newNode->prev = last;
+    last->next = newNode;
   
     return last;
 }
