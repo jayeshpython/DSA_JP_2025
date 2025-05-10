@@ -74,8 +74,10 @@ int dequeue(int front, int rear, que* a){
     if(rear == -1){
         printf("\n\tQueue is empty!");
     }
-    else if(front == rear)    // if last element removed, reset front
-    front = 0;
+    else if(front == rear){    // if last element removed, reset front
+        front = 0;
+        rear = -1;
+    }
 
     else{
         printf("\n\t%d is deleted", a[front].no);
