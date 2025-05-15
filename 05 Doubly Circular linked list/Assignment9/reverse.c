@@ -4,24 +4,24 @@
 #include <stdlib.h>
 #include <string.h>
 
-typedef struct Singly {
+typedef struct Doubly {
     int no;
     char name[20];
-    struct Singly* next;
-    struct Singly* prev;
-} sll;
+    struct Doubly* next;
+    struct Doubly* prev;
+} dsl;
 
-sll* create(sll*);
-void display(sll*);
-void freeList(sll*);
-sll* reverse(sll*);
+dsl* create(dsl*);
+dsl* reverse(dsl*);
+void display(dsl*);
+void freeList(dsl*);
 
 int main() {
-    sll* last = NULL;
+    dsl* last = NULL;
     last = create(last);
     display(last);
 
-    printf("\n\n\tLinked list after reversing.");
+    printf("\n\n\tReversing the Doubly Circular Linked List...");
     last = reverse(last);
     display(last);
 
@@ -29,80 +29,82 @@ int main() {
     return 0;
 }
 
-sll* create(sll* last) {
-    sll* newNode;
+dsl* create(dsl* last) {
+    dsl* newNode;
     int ans;
 
     do {
-        newNode = (sll*)malloc(sizeof(sll));
+        newNode = (dsl*)malloc(sizeof(dsl));
         printf("\n\tEnter number and name: ");
         scanf("%d %s", &newNode->no, newNode->name);
 
-        newNode->next = NULL;
-        newNode->prev = last;
-
         if (last == NULL) {
+            newNode->next = newNode;
+            newNode->prev = newNode;
             last = newNode;
-            last->next = last;
-            last->prev = last;
         } else {
             newNode->next = last->next;
-            last->next->prev = newNode;
             newNode->prev = last;
+            last->next->prev = newNode;
             last->next = newNode;
             last = newNode;
         }
 
-        printf("\n\tDo you want to continue(1/0): ");
+        printf("\n\tDo you want to enter more records (1/0)? ");
         scanf("%d", &ans);
     } while (ans != 0);
+
     return last;
 }
 
-void display(sll* last) {
-    if (!last) {
-        printf("\n\tList is empty");
+void display(dsl* last) {
+    if (last == NULL) {
+        printf("\n\tList is empty.");
         return;
     }
 
-    sll* p = last->next;
-    printf("\n\tCircular doubly linked list");
+    printf("\n\tDoubly Circular Linked List:");
+    dsl* p = last->next;
     do {
         printf("\n\tNumber = %d, Name = %s", p->no, p->name);
         p = p->next;
     } while (p != last->next);
 }
 
-void freeList(sll* last) {
-    if (!last) return;
+dsl* reverse(dsl* last){
 
-    sll* p = last->next;
-    sll* temp;
-
-    do {
-        temp = p;
-        p = p->next;
-        free(temp);
-    } while (p != last->next);
-    printf("\n\tMemory freed successfully");
-}
-
-sll* reverse(sll* last) {
-    if (!last) {
-        printf("\n\tList is empty.");
+    if(!last){
+        printf("\nList is EMpty");
         return NULL;
     }
+    else if(last->next == last){
+        printf("\nSingle Node");
+        return last;
+    }
 
-    sll* current = last->next;
-    sll* temp;
-
-    while()
-        temp = current->next;
-        current->next = current->prev;
-        current->prev = temp;
-        current = temp;
-    } while (current != last->next);
-
-    last = last->next;
+    dsl* p = last,*q = last->next;
+    do{
+        p ->next = p->prev;
+        p->prev = q;
+        p = q;
+        q = p->next;
+    }while(p != last);
     return last;
+}
+
+
+void freeList(dsl* last) {
+    if (last == NULL)
+        return;
+
+    dsl* p = last->next;
+    last->next = NULL; 
+
+    while (p != NULL) {
+        dsl* temp = p;
+        p = p->next;
+        free(temp);
+    }
+
+    printf("\n\tMemory freed successfully.");
 }
