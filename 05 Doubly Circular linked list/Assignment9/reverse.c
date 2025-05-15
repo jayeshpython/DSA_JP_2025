@@ -73,25 +73,22 @@ void display(dsl* last) {
 
 dsl* reverse(dsl* last){
 
-    if(!last){
-        printf("\nList is EMpty");
-        return NULL;
-    }
-    else if(last->next == last){
-        printf("\nSingle Node");
-        return last;
-    }
+	if(last == NULL)
+		return NULL;
+	
+	dsl* temp = NULL;
+	dsl* p = last;
 
-    dsl* p = last,*q = last->next;
-    do{
-        p ->next = p->prev;
-        p->prev = q;
-        p = q;
-        q = p->next;
-    }while(p != last);
-    return last;
+	do{
+		temp = p->next;
+		p->next = p->prev;
+		p->prev = temp;
+		p = p->next;
+	}while(p!=last);
+	
+	last = last->prev;
+	return last;
 }
-
 
 void freeList(dsl* last) {
     if (last == NULL)
