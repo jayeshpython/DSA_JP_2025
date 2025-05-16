@@ -28,14 +28,14 @@ int main(){
 
     int arr[n];
     printf("\nEnter elements: ");
-    for(int i =0; i<n; i++){
+    for(int i = 0; i<n; i++){
         scanf("%d", &arr[i]);
     }
 
     printf("\n\tEnter key: ");
     scanf("%d", &key);
 
-    ans = binarySearch(arr, key, n);
+    ans = binarySearch(arr, n, key);
 
     if(ans != -1)
     printf("\nKey found at %d", ans);

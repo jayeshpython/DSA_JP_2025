@@ -41,5 +41,7 @@ int main(){
     printf("Sorted array: ");
     DisplayArray(arr, n);
 
+    printf("\nThe Time Complexity of Exchange Sort: O(n^2)");
+
     return 0;
 }

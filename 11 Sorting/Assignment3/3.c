@@ -40,5 +40,10 @@ int main(){
     InsertionSort(arr,n);
     printf("\nSorted Array is:\n");
     DisplayArray(arr,n);
+
+    printf("\n\nTime Complexity of Insertion Sort:");
+    printf("\nBest Case: O(n)");
+    printf("\nAverage Case: O(n^2)");
+
     return 0;
 }

@@ -42,5 +42,8 @@ int main(){
     selectionSort(arr,n);
     printf("\nSorted Array is:\n");
     DisplayArray(arr,n);
+
+    printf("\n\nTime Complexity of Selection Sort: O(n^2)");
+   
     return 0;
 }

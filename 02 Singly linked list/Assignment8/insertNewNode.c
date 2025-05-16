@@ -83,6 +83,12 @@ Node* insertNewNode(Node* head){
     printf("\nEnter name and number to insert: ");
     scanf("%s %d", nw->name, &nw->no);
 
+    if(key <= 0) {
+        printf("\n\tInvalid position!");
+        free(nw);
+        return head;
+    }
+
     // Insert at head
     if(key == 1){
         nw->next = head;

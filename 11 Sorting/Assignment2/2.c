@@ -42,5 +42,10 @@ int main(){
     bubbleSort(arr,n);
     printf("\nSorted Array is:\n");
     DisplayArray(arr,n);
+
+    printf("\nTime Complexity of Bubble Sort:");
+    printf("\nBest Case: O(n)");
+    printf("\nAverage Case: O(n^2)");
+
     return 0;
 }
