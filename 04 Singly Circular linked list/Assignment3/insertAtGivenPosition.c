@@ -87,12 +87,12 @@ void freeList(scl* last){
 }
 
 scl* insertion(scl* last) {
-    if (last == NULL) {
-        printf("\n\tList is empty.");
-        return NULL;
-    }
-
+    
     scl* newNode = (scl*)malloc(sizeof(scl));
+    if (!newNode) {
+        printf("\n\tMemory allocation failed.");
+        return last;
+    }
     printf("\n\tEnter number and name: ");
     scanf("%d %s", &newNode->no, newNode->name);
 

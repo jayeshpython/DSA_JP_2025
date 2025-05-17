@@ -94,30 +94,28 @@ void freeList(dsl* last){
 
 dsl* insertAtLast(dsl* last){
 
-    if(last == NULL){
-        printf("\n\tList is empty.");
-        return NULL;
-    }
     dsl* newNode;
     newNode = (dsl*)malloc(sizeof(dsl));
+    if (!newNode) {
+        printf("\n\tMemory allocation failed.");
+        return last;
+    }
     printf("\n\tEnter Number and name: ");
     scanf("%d %s", &newNode->no, newNode->name);
 
     //When list is empty
     if(last == NULL){
-        last = newNode;
-        last->next = last;
-        last->prev = last;
+        newNode->next = newNode;
+        newNode->prev = newNode;
         return newNode;
     }
 
     //Inserting at last position
     newNode->next = last->next;
-     newNode->prev = last;
-     last->next->prev = newNode;
+    newNode->prev = last;
+    last->next->prev = newNode;
     last->next = newNode;
     last = newNode;
     
-
     return last;
 }
