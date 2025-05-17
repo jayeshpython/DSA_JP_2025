@@ -22,7 +22,7 @@ int main(){
     last = create(last);
     display(last);
 
-    printf("\n\tlinked list after inserting new node");
+    printf("\n\tlinked list after deleting node");
     last = deletion(last);
     display(last);
     freeList(last);
@@ -129,6 +129,8 @@ dsl* deletion(dsl* last){
         last = p;
         return last;
     }
-    printf("\n\tKey not founf.");
+    else{
+        printf("\n\tKey not found.");
+    }
     return last;
 }

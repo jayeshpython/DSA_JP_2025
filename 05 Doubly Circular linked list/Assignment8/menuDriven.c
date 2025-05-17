@@ -122,12 +122,12 @@ void freeList(dsl* last){
 
 dsl* insertion(dsl* last){
 
-    if(last == NULL){
-        printf("\n\tList is empty.");
-        return NULL;
-    }
     dsl* newNode;
     newNode = (dsl*)malloc(sizeof(dsl));
+    if (!newNode) {
+        printf("\n\tMemory allocation failed.");
+        return last;
+    }
     printf("\n\tEnter Number and name: ");
     scanf("%d %s", &newNode->no, newNode->name);
 
@@ -219,6 +219,8 @@ dsl* deletion(dsl* last){
         last = p;
         return last;
     }
-    printf("\n\tKey not found.");
+    else{
+        printf("\n\tKey not found.");
+    }
     return last;
 }

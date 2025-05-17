@@ -94,7 +94,7 @@ scl* deletion(scl* last){
 
     if(last == NULL){
         printf("\n\tList is empty.");
-        return NULL;
+        return last;
     }
 
     int key;

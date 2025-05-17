@@ -206,8 +206,9 @@ scl* deletion(scl* last){
         free(last);
         last = p;
         return last;
+    }else{
+        printf("\n\tKey not found.");
     }
-    printf("\n\tKey not found.");
     return last;
 }
 
