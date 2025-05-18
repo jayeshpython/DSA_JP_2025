@@ -89,59 +89,46 @@ void freeList(scl* last) {
 
     printf("\n\tMemory Freed Successfully!\n");
 }
-        
-scl* deletion(scl* last){
 
-    if(last == NULL){
+scl* deletion(scl* last) {
+    if (last == NULL) {
         printf("\n\tList is empty.");
         return NULL;
     }
 
     int pos;
-    printf("\n\tEnter position of node to be deleted: ");
+    printf("\n\tEnter position of node to delete: ");
     scanf("%d", &pos);
 
-    scl* p = last->next;
-    scl* q = last;
+    scl *p = last->next, *q = NULL;
+    int i = 1;
 
-    int count = 1;
-    scl* tempCount = last->next;
-    while (tempCount != last) {
-        count++;
-        tempCount = tempCount->next;
-    }
-    if (pos < 1 || pos > count) {
-        printf("\n\tInvalid position.");
-        return last;
-    }
-
-    //delete when its only one node
-    if(last->next == last){
-        free(p);
-        return NULL;
-    }
-
-    scl* temp = last->next;
-    //deleting first node
-    if(pos == 1){
+    if (pos == 1) {
+        if (last->next == last) {
+            free(last);
+            return NULL;
+        }
+        scl* temp = last->next;
         last->next = temp->next;
         free(temp);
         return last;
     }
 
-    // deleting a middle node
-    for(int i = 1; i < pos && p != last; i++){
+    while (i < pos && p != last) {
+        q = p;
         p = p->next;
-        q = q->next;
+        i++;
     }
-    q->next = p->next;
+
+    if(i <= pos-1){
+		printf("Invalid position\n");
+		return last;
+    }
     
-    //deleting last node
-    if(p == last){
-        q->next = p->next;
+    q->next = p->next;
+    if (p == last)
         last = q;
-    }
+
     free(p);
     return last;
-    
 }
