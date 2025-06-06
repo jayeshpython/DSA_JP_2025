@@ -17,14 +17,23 @@ int main(){
 
 long long int reverseIntegerNumber(long long int number){
 
-    long long int reversed =0, a;
+    long long int reversed =0, cnt =0, n = number, multiply = 1, a;
 
+    if(number != 0){
 
-    if(number >0){
-        a = number % 10;
-        reversed = reversed*10 + a;
-        reversed = reverseIntegerNumber(number / 10, reversed*10 +a);
+        while(n != 0){
+            cnt++;
+            n = n/10;
+        }
+  
+        for(int i =1; i<cnt; i++){
+            multiply = multiply * 10;
+        }
+
+        a = number %10;
+        reversed = reverseIntegerNumber(number /10);
+        return (reversed + multiply *a);
     }
-    return reversed;
+    
 }
 
