@@ -22,8 +22,9 @@ long long int reverseIntegerNumber(long long int number){
 
     if(number >0){
         a = number % 10;
-        reversed = reverseIntegerNumber(number / 10);
         reversed = reversed*10 + a;
+        reversed = reverseIntegerNumber(number / 10, reversed*10 +a);
     }
     return reversed;
 }
+
