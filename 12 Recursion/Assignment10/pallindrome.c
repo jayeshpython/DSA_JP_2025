@@ -1,7 +1,9 @@
 
 #include <stdio.h>
 
-long long int pallindrome(long long int);
+long long int reverseIntegerNumber(long long int);
+long long int numberOfDigits(long long int);
+long long int multiply(long long int);
 
 int main(){
 
@@ -9,7 +11,7 @@ int main(){
     printf("Enter number: ");
     scanf("%lldd", &number);
 
-    result = pallindrome(number);
+    result = reverseIntegerNumber(number);
     if(result == number){
         printf("Number is pallindrome");
     }
@@ -19,24 +21,34 @@ int main(){
     return 0;
 }
 
-long long int pallindrome(long long int number){
+long long int reverseIntegerNumber(long long int number){
 
-    long long int multiply =1, n = number, reversed =0, cnt =0, a;
+    long long int reversed =0, a, digits;
 
     if(number != 0){
 
-        while(n != 0){
-            cnt++;
-            n = n/10;
-        }
-
-        for(int i =1; i<cnt; i++){
-            multiply = multiply *10;
-        }
-
         a = number %10;
+        digits = numberOfDigits(number);
+        return a* multiply(digits - 1) + reverseIntegerNumber(number /10);
 
-        reversed = pallindrome(number /10);
-        return (reversed + multiply *a);
     }
+    
+}
+
+long long int numberOfDigits(long long int number){
+
+    long long int digits;
+    if(number != 0){
+        digits =  1 + numberOfDigits(number /10);
+        return digits;
+    }
+    return 0;
+}
+
+long long int multiply(long long int digits){
+    
+    if(digits == 0){
+        return 1;
+    }
+    return 10 * multiply(digits-1);
 }
