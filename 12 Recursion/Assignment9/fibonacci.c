@@ -18,9 +18,9 @@ int main(){
 void fibonacciSeries(int a, int b, int n){
 
     int sum = a+b;
-    if(sum <= n){
+    if(a <= n){
 
-        printf("%d ", sum);
+        printf("%d ", a);
         fibonacciSeries(b, sum, n);
     }
 }
