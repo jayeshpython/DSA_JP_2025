@@ -19,6 +19,9 @@ int main(){
 double calculatePower(double base, double exponent){
 
     double power = 1;
+    if(exponent == 0){
+        return 1;
+    }
     if(exponent > 1){
         power = calculatePower(base, exponent -1);
     }
