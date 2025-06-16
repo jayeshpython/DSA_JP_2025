@@ -9,5 +9,5 @@ typedef struct BST{          //Structure Declaration
 
 //Function declaration
 bst* createTree(bst*);
-void countEvenOddNodes(bst*, int*, int*);
 void displayTree(bst*);
+int findHeight(const bst*);

@@ -60,16 +60,13 @@ void displayTree(bst* root){
     }
 }
 
-void countEvenOddNodes(bst* root, int* even, int* odd){
+void printLeafNodes(bst* root){
 
     if(root != NULL){
-
-        if(root->data %2 == 0)
-            (*even)++;
-        else
-            (*odd)++;
-
-        countEvenOddNodes(root->left, even, odd);
-        countEvenOddNodes(root->right, even, odd);
+        if(root->left == NULL && root->right == NULL){
+            printf("%d ", root->data);
+        }
+        printLeafNodes(root->left);
+        printLeafNodes(root->right);
     }
 }

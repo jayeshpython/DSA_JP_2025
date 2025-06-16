@@ -60,16 +60,40 @@ void displayTree(bst* root){
     }
 }
 
-void countEvenOddNodes(bst* root, int* even, int* odd){
+/*
+int findMax(const bst* root){
 
-    if(root != NULL){
+    int max = root->data;
+    const bst* p = root;
 
-        if(root->data %2 == 0)
-            (*even)++;
-        else
-            (*odd)++;
+    while(p != NULL){
 
-        countEvenOddNodes(root->left, even, odd);
-        countEvenOddNodes(root->right, even, odd);
+        if(p->data > max){
+            max = p->data;
+        }
+        p = p->right;
     }
+    return max;
 }
+*/
+
+int findMax(const bst* root){
+
+    int max = root->data;
+    if(root->right != NULL){
+        int rightMax = findMax(root->right);
+
+        if(rightMax > max)
+            max = rightMax;
+    }
+
+    if(root->left != NULL){
+        int leftMax = findMax(root->left);
+
+        if(leftMax > max)
+            max = leftMax;
+    }
+    return max;
+    
+}
+

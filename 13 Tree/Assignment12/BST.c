@@ -60,16 +60,19 @@ void displayTree(bst* root){
     }
 }
 
-void countEvenOddNodes(bst* root, int* even, int* odd){
+int findHeight(const bst* root){
+
+    int leftCnt = 0, rightCnt =0;
 
     if(root != NULL){
 
-        if(root->data %2 == 0)
-            (*even)++;
+        leftCnt = findHeight(root->left);
+        rightCnt = findHeight(root->right);
+    
+        if(leftCnt > rightCnt)
+            return leftCnt +1;
         else
-            (*odd)++;
-
-        countEvenOddNodes(root->left, even, odd);
-        countEvenOddNodes(root->right, even, odd);
+            return rightCnt +1;
     }
+    return 0;
 }

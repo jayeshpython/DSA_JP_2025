@@ -89,48 +89,40 @@ void freeList(dsl* last){
     printf("\n\tMemory freed successfully!");
 }
 
+
 dsl* deletion(dsl* last){
 
-    if(last == NULL){
-        printf("\n\tList is empty");
-        return NULL;
-    }
+	int flag = 0;
+	int key;
 
-    int key;
-    printf("\n\tEnter key: ");
-    scanf("%d", &key);
+	if(last == NULL){
+		printf("list is empty\n");
+		return last;
+	}
+	printf("Enter key:");
+	scanf("%d",&key);
 
-    dsl* p = last->next;
-    dsl* q = last;
+	dsl* p = last->next;
+	while(p != last && p->no != key){
+		p = p->next;
+	}
+	if(p->no == key){
+		if(p->next == p){
+			free(p);
+			last = NULL;
+			printf("key is deleted succesfully\n");
+		}
+		else{
+			p->prev->next = p->next;
+			p->next->prev;
+            p->prev;
+			free(p);
+			printf("key is deleted succesfully\n");
 
-    // delete When its only node
-    if(last->next == last && last->no == key){
-        free(p);
-        return NULL;
-    }
-
-    while(p != last){
-
-        if(p->no == key){
-            q->next = p->next;
-            p->next->prev = q;
-            free(p);
-            return last;
-        }
-        q = p;
-        p = p->next;
-    }
-
-    //delete last node
-    if(last->no == key){
-        q->next = p->next;
-        p->next->prev = q;
-        free(last);
-        last = p;
-        return last;
-    }
-    else{
-        printf("\n\tKey not found.");
-    }
-    return last;
+		}
+	}
+	else{
+		printf("key does not exist\n");
+	}
+	return last;
 }

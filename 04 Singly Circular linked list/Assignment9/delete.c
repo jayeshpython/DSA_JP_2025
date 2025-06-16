@@ -90,45 +90,47 @@ void freeList(scl* last) {
     printf("\n\tMemory Freed Successfully!\n");
 }
 
-scl* deletion(scl* last) {
-    if (last == NULL) {
-        printf("\n\tList is empty.");
-        return NULL;
-    }
 
-    int pos;
-    printf("\n\tEnter position of node to delete: ");
-    scanf("%d", &pos);
+scl* deletion(scl* last){
 
-    scl *p = last->next, *q = NULL;
-    int i = 1;
+	scl* p;
+	scl* q = NULL;
 
-    if (pos == 1) {
-        if (last->next == last) {
-            free(last);
-            return NULL;
-        }
-        scl* temp = last->next;
-        last->next = temp->next;
-        free(temp);
-        return last;
-    }
+	int pos,i =1;
+	if(last == NULL)
+	return NULL;
 
-    while (i < pos && p != last) {
-        q = p;
-        p = p->next;
-        i++;
-    }
+	p=last->next;
 
-    if(i <= pos-1){
+	printf("Enter position of node to delete:");
+	scanf("%d",&pos);
+
+	if(pos == 1){
+		if(last->next == last){
+			free(last);
+			return NULL;
+		}
+		last->next = p->next;
+		free(p);
+		return last;
+	}	
+	while(i <= pos-1 && p != last){
+		q = p;
+		p = p->next;
+		i++;
+	}
+	if(i <= pos-1){
 		printf("Invalid position\n");
 		return last;
-    }
-    
-    q->next = p->next;
-    if (p == last)
-        last = q;
-
-    free(p);
-    return last;
+	}
+	
+	q->next = p->next;
+	if(p == last)
+		last = q;
+	free(p);
+	return last;
 }
+
+			
+	
+	

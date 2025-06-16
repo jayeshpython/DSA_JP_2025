@@ -60,16 +60,11 @@ void displayTree(bst* root){
     }
 }
 
-void countEvenOddNodes(bst* root, int* even, int* odd){
+void freeTree(bst* root){
 
     if(root != NULL){
-
-        if(root->data %2 == 0)
-            (*even)++;
-        else
-            (*odd)++;
-
-        countEvenOddNodes(root->left, even, odd);
-        countEvenOddNodes(root->right, even, odd);
+        freeTree(root->left);
+        freeTree(root->right);
+        free(root);
     }
 }

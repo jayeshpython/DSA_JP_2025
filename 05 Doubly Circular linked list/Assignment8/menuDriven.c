@@ -178,49 +178,41 @@ dsl* insertion(dsl* last){
     return last;
 }
 
-
 dsl* deletion(dsl* last){
 
-    if(last == NULL){
-        printf("\n\tList is empty");
-        return NULL;
-    }
+	dsl* p;
+	int pos, i = 1;
 
-    int key;
-    printf("\n\tEnter key: ");
-    scanf("%d", &key);
+	if(last == NULL)
+	return NULL;
 
-    dsl* p = last->next;
-    dsl* q = last;
+	p = last->next;
+	printf("Enter position of node to delete: ");
+	scanf("%d",&pos);
 
-    // delete When its only node
-    if(last->next == last && last->no == key){
-        free(p);
-        return NULL;
-    }
-
-    while(p != last){
-
-        if(p->no == key){
-            q->next = p->next;
-            p->next->prev = q;
-            free(p);
-            return last;
-        }
-        q = p;
-        p = p->next;
-    }
-
-    //delete last node
-    if(last->no == key){
-        q->next = p->next;
-        p->next->prev = q;
-        free(last);
-        last = p;
-        return last;
-    }
-    else{
-        printf("\n\tKey not found.");
-    }
-    return last;
+	if(pos == 1){
+		if(last->next == last){
+			free(last);
+			return NULL;
+		}
+		last->next = p->next;
+		p->next->prev = last;
+		free(p);
+		return last;
+	}	
+	while(i <= pos-1 && p != last){
+		p = p->next;
+		i++;
+	}
+	if(i <= pos-1){
+		printf("Invalid position\n");
+		return last;
+	}
+	
+	p->prev->next = p->next;
+	p->next->prev = p->prev;
+	if(p == last)
+		last = p->prev;
+	free(p);
+	return last;
 }

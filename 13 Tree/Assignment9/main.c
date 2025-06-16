@@ -3,12 +3,12 @@
 
 int main(){
 
-    int ans;
+    int even =0, odd =0;
     bst* root = NULL;
     root = createTree(root);     //Function calling
     void displayTree(bst* root);
 
-    ans = countNodes(root);
-    printf("\nNumber of nodes in Tree: %d", ans);
+    countEvenOddNodes(root, &even, &odd);
+    printf("\nEven = %d\n, Odd = %d", even, odd);
     return 0;
 }

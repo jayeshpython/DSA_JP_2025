@@ -60,16 +60,17 @@ void displayTree(bst* root){
     }
 }
 
-void countEvenOddNodes(bst* root, int* even, int* odd){
+void countLeafNonLeaf(bst* root, int* leaf, int* nonleaf){
 
     if(root != NULL){
 
-        if(root->data %2 == 0)
-            (*even)++;
+        if(root->left == NULL && root->right == NULL){
+            (*leaf)++;
+        }
         else
-            (*odd)++;
+            (*nonleaf)++;
 
-        countEvenOddNodes(root->left, even, odd);
-        countEvenOddNodes(root->right, even, odd);
+        countLeafNonLeaf(root->left, leaf, nonleaf);
+        countLeafNonLeaf(root->right, leaf, nonleaf);
     }
 }
