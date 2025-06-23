@@ -1,5 +1,4 @@
 
-
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -9,23 +8,22 @@ typedef struct BST{
 }bst;
 
 bst* create(bst*);
-void printInRange(bst*, int, int);
+void printPath(bst*, int);
 void display(bst*);
 
 int main(){
 
     bst* root = NULL;
-    int k1,k2;
+    int target;
     root = create(root);
 
     printf("\nDisplaying Tree elements: \n");
     display(root);
 
-    printf("Enter range [k1 k2]: ");
-    scanf("%d %d", &k1, &k2);
+    printf("\nEnter target node value: ");
+    scanf("%d", &target);
+    printPath(root, target);
 
-    printf("Nodes in range [%d, %d]: ", k1, k2);
-    printInRange(root, k1, k2);
     return 0;
 }
 
@@ -88,18 +86,43 @@ void display(bst* root){
     }
 }
 
-void printInRange(bst* root, int k1, int k2){
+/*
+void printPath(bst* root, int target){
 
-    if(root != NULL){
-
-        printInRange(root->left , k1, k2);
-        if(k1 == root->data || k2 == root->data)
-            printf("%d ", root->data);
-        if(root->data > k1 && root->data < k2)
-            printf("%d ", root->data);
-        if(root->data < k1 && root->data > k2)
-            printf("%d ", root->data);
-
-        printInRange(root->right, k1, k2);
+    bst* temp = root;
+    while(temp != NULL){
+        if(temp->data > target){
+            printf("%d ", temp->data);
+            temp = temp->left;
+        }
+        if(temp->data < target){
+            printf("%d ", temp->data);
+            temp = temp->right;
+        }
+        if(temp->data == target){
+            printf("%d ", temp->data);
+            break;
+        }
     }
+}
+*/
+
+
+void printPath(bst* root, int target){
+
+    if (root == NULL) {
+        printf("Target not found in the tree.\n");
+        return;
+    }
+
+    printf("%d ", root->data); 
+
+    if (root->data == target) {
+        printf("\n");
+        return;
+    }
+    else if(target < root->data)
+        printPath(root->left, target);
+    else 
+        printPath(root->right, target);
 }
