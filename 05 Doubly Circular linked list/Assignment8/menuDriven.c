@@ -178,41 +178,45 @@ dsl* insertion(dsl* last){
     return last;
 }
 
+
 dsl* deletion(dsl* last){
 
-	dsl* p;
-	int pos, i = 1;
+    int key;
 
-	if(last == NULL)
-	return NULL;
+    if (last == NULL) {
+        printf("\n\tList is empty.\n");
+        return NULL;
+    }
 
-	p = last->next;
-	printf("Enter position of node to delete: ");
-	scanf("%d",&pos);
+    printf("\n\tEnter key to delete: ");
+    scanf("%d", &key);
 
-	if(pos == 1){
-		if(last->next == last){
-			free(last);
-			return NULL;
-		}
-		last->next = p->next;
-		p->next->prev = last;
-		free(p);
-		return last;
-	}	
-	while(i <= pos-1 && p != last){
-		p = p->next;
-		i++;
-	}
-	if(i <= pos-1){
-		printf("Invalid position\n");
-		return last;
-	}
-	
-	p->prev->next = p->next;
-	p->next->prev = p->prev;
-	if(p == last)
-		last = p->prev;
-	free(p);
-	return last;
+    dsl* p = last->next;
+
+    while (p != last && p->no != key) {
+        p = p->next;
+    }
+
+    if (p->no == key) {
+        if (p->next == p) {
+            free(p);
+            last = NULL;
+        }
+        else {
+            p->prev->next = p->next;
+            p->next->prev = p->prev;
+
+            if (p == last) {
+                last = p->prev;
+            }
+
+            free(p);
+        }
+        printf("\n\tKey %d deleted successfully.\n", key);
+    }
+    else {
+        printf("\n\tKey not found.\n");
+    }
+
+    return last;
 }
