@@ -1,4 +1,5 @@
 
+//Write a C program to implement Linear Search. Also, print the time complexity at the start of the program. Follow this pattern for all upcoming questions.
 
 #include <stdio.h>
 

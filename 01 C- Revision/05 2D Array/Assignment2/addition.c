@@ -1,4 +1,6 @@
 
+//Accept  two different n*m matrix and store and display the addition of two matrix in 3rd matrix 
+
 #include <stdio.h>
 int main(){
 	int a[3][3], b[3][3], c[3][3];

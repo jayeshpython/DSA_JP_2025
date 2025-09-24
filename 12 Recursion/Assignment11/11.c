@@ -1,4 +1,6 @@
 
+//accept a string and calculate the length of string  using recursion
+
 #include <stdio.h>
 
 int stringLength(char[]);

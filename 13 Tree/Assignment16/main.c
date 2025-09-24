@@ -1,4 +1,6 @@
 
+//Write menu driven code given by mam with all functions 
+
 #include <stdio.h>
 #include "BST.h"
 

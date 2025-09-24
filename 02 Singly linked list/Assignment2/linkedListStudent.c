@@ -1,3 +1,13 @@
+
+
+/*
+"write a c program to Create and Display Singly Linked list. with structure ""Student"" with following data members:
+-Name 
+-Roll no
+-standard
+-Division
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

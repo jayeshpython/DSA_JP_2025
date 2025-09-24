@@ -1,5 +1,5 @@
 
-
+//Write the code to covert the below expression from Infix to Prefix : F*(A+B)/E-D*(G+H/K)
 
 #include <stdio.h>
 #include <stdlib.h>

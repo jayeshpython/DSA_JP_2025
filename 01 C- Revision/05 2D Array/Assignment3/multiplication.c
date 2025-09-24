@@ -1,4 +1,5 @@
 
+//Accept elements in two n*m matrix and display the multiplication of two matrix
 
 #include <stdio.h>
 int main(){

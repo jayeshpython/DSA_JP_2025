@@ -1,4 +1,6 @@
 
+//Accept number 'N' and calculate factorial of 'N' using recursion
+
 #include <stdio.h>
 
 int factorial(int n){

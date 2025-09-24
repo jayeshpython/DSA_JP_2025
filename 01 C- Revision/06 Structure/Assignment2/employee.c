@@ -1,3 +1,8 @@
+
+/*
+write a C program to read and print an employee's detail using structure.
+   - read and print the employee's details like name, employee id, salary etc using structure.
+*/
 #include <stdio.h>
 
 typedef struct Employee {

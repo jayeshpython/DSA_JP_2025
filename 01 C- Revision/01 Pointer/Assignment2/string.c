@@ -1,3 +1,6 @@
+
+// write a Program to print a string using pointer.
+
 #include <stdio.h>
 
 int main() {

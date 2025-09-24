@@ -1,4 +1,5 @@
 
+//write a c program to Create a circular singly linked list and delete the last node .
 
 #include <stdio.h>
 #include <stdlib.h>

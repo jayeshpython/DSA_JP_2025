@@ -1,4 +1,6 @@
 
+//Write a C program to Print path from root to given node [target node]
+
 #include <stdio.h>
 #include <stdlib.h>
 

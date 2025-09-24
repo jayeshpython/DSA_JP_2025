@@ -1,3 +1,14 @@
+
+
+/*
+"write a c program to Create a Singly linked list and swap the two consecutive nodes 
+	  
+I/P  ---->   |_1_|_AA_|_100_| --> |_2_|_BB_|_200_| --> |_3_|_CC_|_300_| --> |_4_|_DD_|_400_| --> |_5_|_EE_|_500_| --> |_6_|_FF_|_NULL_|  
+
+
+O/P  ---->   |_2_|_BB_|_100_| --> |_1_|_AA_|_200_| --> |_4_|_DD_|_300_| --> |_3_|_CC_|_400_| --> |_6_|_FF_|_500_| --> |_5_|_EE_|_NULL_|
+*/
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

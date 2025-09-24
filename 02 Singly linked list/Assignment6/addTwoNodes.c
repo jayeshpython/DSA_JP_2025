@@ -1,4 +1,13 @@
 
+
+/*
+    write a c program to Create a Singly Linked list and  Display the addition of two consecutive nodes to the next node 
+	  
+I/P  ---->   |_1_|_AA_|_100_| --> |_2_|_BB_|_200_| --> |_3_|_CC_|_300_| --> |_4_|_DD_|_NULL_| 
+
+O/P ---->    |_1_|_AA_|_100_| --> |_2_|_BB_|_200_| --> |_3_|_AABB_|_700_| --> |_3_|_CC_|_300_| --> |_4_|_DD_|_800_| --> |_7_|_CCDD_|_NULL_|
+"
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

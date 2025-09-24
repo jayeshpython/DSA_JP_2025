@@ -1,4 +1,5 @@
 
+//write a c program to Find middle node in doubly linked list.
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,4 +1,5 @@
 
+//write a function to find the length of a string.
 
 #include <stdio.h>
 #include <stdlib.h>

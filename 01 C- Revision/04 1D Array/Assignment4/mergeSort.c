@@ -1,5 +1,9 @@
 
 /*
+- Write a C program which allocates two array dynamically.
+	- Implement logic to merge and sort two array. 
+*/
+/*
 #include <stdio.h>
 int main(){
 

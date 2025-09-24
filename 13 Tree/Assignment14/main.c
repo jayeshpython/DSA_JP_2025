@@ -1,4 +1,6 @@
 
+//Write a C program to print all leaf nodes of the BST.
+
 #include "BST.h"
 
 int main(){

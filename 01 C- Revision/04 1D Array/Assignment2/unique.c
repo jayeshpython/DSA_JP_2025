@@ -1,4 +1,8 @@
 
+/*
+- Write a C program which allocates an array dynamically.
+	- Implement logic which accepts only unique elements in array  
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

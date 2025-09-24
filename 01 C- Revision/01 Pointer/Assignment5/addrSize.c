@@ -1,5 +1,6 @@
 
-
+// write Program to print addresses and size of all types of pointer variables.
+ 
 #include <stdio.h>
 
 int main() {

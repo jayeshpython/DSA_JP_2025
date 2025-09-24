@@ -1,4 +1,6 @@
 
+//write C program to check a given number is prime or not using recursion.
+
 #include <stdio.h>
 
 void primeNumber(long int, long int);

@@ -1,4 +1,5 @@
 
+//Accept two strings and concatinate the contents into 3rd string
 
 #include <stdio.h>
 #include <string.h>

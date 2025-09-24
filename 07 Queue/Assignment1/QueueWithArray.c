@@ -1,4 +1,5 @@
 
+//write a c program to Create a queue and perform enqueue and dequeue operations(using array) 
 
 # include <stdio.h>
 #include <stdlib.h>
@@ -57,6 +58,7 @@ int main(){
 
 //Inserting elements in queue
 int enqueue(int rear, que* a){
+    
     if(rear == MAX - 1)
     printf("\n\tQueue is Full");
 

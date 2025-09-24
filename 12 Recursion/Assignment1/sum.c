@@ -1,4 +1,6 @@
 
+//Accept  N  numbers and calculate sum of all numbers using recursion
+
 #include <stdio.h>
 
 int sumOfNumbers(int[], int);

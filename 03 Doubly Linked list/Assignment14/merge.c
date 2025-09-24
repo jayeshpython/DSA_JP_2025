@@ -1,4 +1,6 @@
 
+//write a c program to create two doubly linked lists, sort them individually and then merge the two sorted lists
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

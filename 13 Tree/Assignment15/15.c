@@ -1,4 +1,6 @@
 
+//Write a C program to create BST and insert an element in the BST using recursion(Call insert function from create function)
+
 #include <stdio.h>
 #include <stdlib.h>
 

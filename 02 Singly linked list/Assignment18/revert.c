@@ -1,4 +1,9 @@
 
+/*
+"write a c program to Create a Singly linked list and revert it 
+I/P  ---->   |_1_|_AA_|_100_| --> |_2_|_BB_|_200_| --> |_3_|_CC_|_300_| --> |_4_|_DD_|_NULL_| 
+O/P ---->    |_4_|_DD_|_100_| --> |_3_|_CC_|_200_| --> |_2_|_BB_|_300_| --> |_1_|_AA_|_NULL_|"
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

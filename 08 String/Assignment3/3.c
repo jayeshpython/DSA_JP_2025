@@ -1,4 +1,5 @@
 
+//Accept a string and reverse the content of string 
 
 #include<stdio.h>
 #include<string.h>

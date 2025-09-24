@@ -1,4 +1,5 @@
 
+//write C program to find the LCM (Lowest Common Multiple) of given numbers using recursion
 
 #include <stdio.h>
 

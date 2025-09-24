@@ -1,4 +1,9 @@
 
+/*
+ write a C program to create memory for int, char and float variable at run time.
+     - create memory for int, char and float variables at run time using malloc() function
+     - and before exiting the program release the memory allocated at run time by using free() function.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

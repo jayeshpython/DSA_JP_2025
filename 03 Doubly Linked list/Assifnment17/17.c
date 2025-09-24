@@ -1,4 +1,12 @@
 
+/*
+"write a c program to Swap doubly linked list without using swapping. 
+hint -> Adust the pointer instead of swapping the data
+I/P  ---->   |_1_|_AA_| --> |_2_|_BB_| --> |_3_|_CC_| --> |_4_|_DD_| --> |_5_|_EE|_NULL_|  
+
+O/P  ---->   |_3_|_CC_| --> |_4_|_DD_| --> |_1_|_AA_| --> |_2_|_BB_| --> |_5_|_EE_|_NULL_|"
+
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

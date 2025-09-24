@@ -1,4 +1,6 @@
 
+//Write a C program to create BST and Deallocate memory by freeing all nodes in the BST
+
 #include "BST.h"
 
 int main(){

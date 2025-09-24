@@ -1,4 +1,5 @@
 
+//write a c program to Create a Singly linked list and sort the linked list
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -71,7 +72,7 @@ void freeList(Node* head) {
         free(temp);
     }
 }
-
+/*
 Node* sortLinkedList(Node* head){
 
     Node* p;
@@ -93,5 +94,31 @@ Node* sortLinkedList(Node* head){
             }
         }
     }
+    return head;
+}
+    */
+
+    Node* sortLinkedList(Node* head) {
+    Node* temp = head;
+
+    
+        while (temp != NULL && temp->next != NULL) {
+            if (temp->no > temp->next->no) {
+                // Swap numbers
+                int t = temp->no;
+                temp->no = temp->next->no;
+                temp->next->no = t;
+
+                // Swap names
+                char tn[20];
+                strcpy(tn, temp->name);
+                strcpy(temp->name, temp->next->name);
+                strcpy(temp->next->name, tn);
+                temp = head;
+            }else
+            temp = temp->next;
+        }
+    
+
     return head;
 }

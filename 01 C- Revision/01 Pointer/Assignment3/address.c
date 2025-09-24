@@ -1,4 +1,5 @@
 
+// write a Program to read  array elements and print with addresses.
 
 #include <stdio.h>
 

@@ -1,4 +1,5 @@
 
+//Write a C program to Accept an array and Perform Selection sort.
 
 #include<stdio.h>
 

@@ -1,4 +1,5 @@
 
+//write a c program to Create a doubly linked list and Delete a node at Head.
 
 #include <stdio.h>
 #include <stdlib.h>

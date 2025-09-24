@@ -1,4 +1,5 @@
 
+//write a c program to Delete duplicate values(nodes) in doubly linked list.
 
 #include <stdio.h>
 #include <stdlib.h>

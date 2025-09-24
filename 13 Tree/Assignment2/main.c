@@ -1,4 +1,5 @@
 
+//Write a C program to create BST and insert an element in the BST
 
 #include "BST.h"
 

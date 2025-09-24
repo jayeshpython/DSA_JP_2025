@@ -1,4 +1,6 @@
 
+//accept number and check whether the number is a palidrome or not  using recursion 
+
 #include <stdio.h>
 
 int reverseNumber(int, int);

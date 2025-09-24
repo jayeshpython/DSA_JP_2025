@@ -1,4 +1,14 @@
 
+/*
+"write a c program to Create a Singly linked list and Display it in reverse order (Use Recursive Function)  
+I/P  ---->   |_1_|_AA_|_100_| --> |_2_|_BB_|_200_| --> |_3_|_CC_|_300_| --> |_4_|_DD_|_NULL_| 
+O/P :
+------  
+4 DD
+3 CC
+2 BB
+1 AA
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

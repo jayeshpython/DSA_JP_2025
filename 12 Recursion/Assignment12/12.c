@@ -1,4 +1,5 @@
 
+//accept two numbers and find the GCD of the numbers  using recursion
 
 #include <stdio.h>
 

@@ -1,4 +1,5 @@
 
+//Write the code to covert the below expression from Infix to Postfix : F*(A+B)/E-D*(G+H/K)       OUTPUT : FAB+*E/DGHK/+*-
 
 #include <stdio.h>
 #include <stdlib.h>

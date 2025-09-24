@@ -1,4 +1,5 @@
 
+//Accept n elements in an array and display the differance between the sum of 1st half  and 2nd half of that array                                       
 
 #include <stdio.h>
 int main(){

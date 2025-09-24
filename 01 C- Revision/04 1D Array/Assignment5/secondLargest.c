@@ -1,4 +1,8 @@
 
+/*
+- Write a C program which allocates an array dynamically.
+	- Implement logic that returns 2nd large element from the array 
+*/
 
 #include <stdio.h>
 int main(){

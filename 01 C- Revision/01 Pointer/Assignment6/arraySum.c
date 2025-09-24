@@ -1,5 +1,8 @@
 
-
+/*
+  Write a function which reads pointers of 2 different array as arguments, 
+   return the pointer of array which elements are sum of  two array element. 
+*/
 #include <stdio.h>
 #include <stdlib.h>
 int main(){

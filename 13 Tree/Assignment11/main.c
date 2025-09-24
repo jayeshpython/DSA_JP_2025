@@ -1,4 +1,6 @@
 
+//Write a C program to find the maximum element in the BST.
+
 #include "BST.h"
 
 int main(){

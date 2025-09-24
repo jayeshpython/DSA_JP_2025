@@ -1,4 +1,5 @@
 
+//accept an array and display the array in reverse order using recursion
 
 #include <stdio.h>
 #include <stdlib.h>

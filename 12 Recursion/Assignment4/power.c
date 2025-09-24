@@ -1,4 +1,6 @@
 
+//Write a C program to Calculate Power of a Number using recursion
+
 #include <stdio.h>
 
 double calculatePower(double, double);

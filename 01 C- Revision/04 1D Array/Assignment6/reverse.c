@@ -1,4 +1,5 @@
 
+//Accept n elements in an array and revert the array 
 	
 #include <stdio.h>
 #include <stdlib.h>

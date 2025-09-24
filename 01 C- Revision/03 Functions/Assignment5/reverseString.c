@@ -1,4 +1,5 @@
 
+//write a function to reverse the  strings 
 
 #include <stdio.h>
 #include <stdlib.h>

@@ -1,4 +1,14 @@
 
+/*
+Write a c program which demonstrate a nested structure 
+	- define a structure employee inside a structure person.
+    - structure person data: 
+                        Name, Age, Date of birth, blood group.
+    - structure employee data:
+                        Company name, Emp id, salary, years of experiance.
+						
+	- create objects of structure and display the all details of a person.
+*/
 
 #include <stdio.h>
 

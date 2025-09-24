@@ -1,4 +1,5 @@
 
+//write C program to find the HCF (Highest Common Factor) of a numbers using recursion
 
 #include <stdio.h>
 

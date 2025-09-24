@@ -1,4 +1,11 @@
 
+/*
+"write a c program to Re-Arrange doubly linked list in pair format.
+input -> 6 <-> 1 <-> 9 <-> 4 <-> 3 <-> 8 <-> 2
+output -> 1 <-> 6 <-> 4 <-> 9 <-> 3 <-> 8 <-> 2
+
+If first value is greater than second then swap  , if 3rd value is less than 4th then swap same for remaining pair"
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

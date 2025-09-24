@@ -1,5 +1,12 @@
 
-
+/*
+"write a c program to Create Menu Driven for doubly linked list which consist following functions:- 
+           -create(),
+          - Insert(),
+          - Delete(),
+          - Display(),
+          - Reverse()."
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

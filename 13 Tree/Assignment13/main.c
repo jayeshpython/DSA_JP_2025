@@ -1,4 +1,6 @@
 
+//Write a C program to count the number of leaf and non-leaf nodes.
+
 #include "BST.h"
 
 int main(){

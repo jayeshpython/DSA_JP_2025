@@ -1,4 +1,5 @@
 
+//write a function to concatenate  two strings 
 
 #include <stdio.h>
 #include <stdlib.h>

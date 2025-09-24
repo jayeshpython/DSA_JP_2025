@@ -1,4 +1,8 @@
 
+/*
+- Write a C program which allocates an array dynamically.
+	- Implement logic to check the frequency of each element throughout the array
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

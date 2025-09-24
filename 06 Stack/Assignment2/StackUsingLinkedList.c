@@ -1,4 +1,6 @@
 
+//write a c program to create a stack and perform push and pop operation (Using Linked List)
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

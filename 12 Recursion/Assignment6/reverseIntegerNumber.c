@@ -1,4 +1,6 @@
 
+//Write C program to reverse an integer number using recursion
+
 #include <stdio.h>
 
 int reverseNumber(int, int);

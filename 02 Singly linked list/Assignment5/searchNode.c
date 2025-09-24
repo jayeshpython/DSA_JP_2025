@@ -1,5 +1,14 @@
 
 
+/*
+" write a c program to Create a singly linked list and search a particular node. 
+          
+I/P  ---->   |_1_|_AA_|_100_| --> |_2_|_BB_|_200_| --> |_3_|_CC_|_300_| --> |_4_|_DD_|_400_| --> |_5_|_EE_|_500_| --> |_6_|_FF_|_NULL_|  
+Enter : Key = 5
+O/P ---->  
+ |_5_|_EE_|_500_|
+ */
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

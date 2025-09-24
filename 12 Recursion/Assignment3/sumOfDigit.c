@@ -1,5 +1,5 @@
 
-
+//Accept a  number 'N' and calculate the sum  of digits in the number using recursion
 
 #include <stdio.h>
 

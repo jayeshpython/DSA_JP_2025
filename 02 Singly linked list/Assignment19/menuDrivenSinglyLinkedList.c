@@ -1,6 +1,12 @@
 
-
-
+/*
+"write a c program to Create a Singly linked list  and perform menu driven which includes following functions: 
+          - create(),
+          - Insert(),
+          - Delete(),
+          - Reverse(),
+          - print()"
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

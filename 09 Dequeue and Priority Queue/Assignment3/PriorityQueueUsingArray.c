@@ -1,4 +1,5 @@
 
+//Write a C program to implement a Priority Queue using a Normal Array.
 
 #include <stdio.h>
 #include <stdlib.h>

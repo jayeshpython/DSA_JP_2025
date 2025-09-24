@@ -1,4 +1,23 @@
 
+/*
+"In C, tell the user to set a password, then ask them to re-enter the password for confirmation. Take password input in a character array, 
+compare the passwords and show a relevant message.
+Sample 1: 
+INPUT: 
+Soham@5643
+soham@5643
+OUTPUT: Password didn’t match! Please try again
+Sample 2: 
+INPUT: 
+        #include<CipherCoding>
+        #include>CipherCoding>
+OUTPUT: Password didn’t match! Please try again
+Sample 3: 
+INPUT: 
+        eru42*sj#tdd$sfsea@uiji
+        eru42*sj#tdd$sfsea@uiji
+OUTPUT: Password matched!"
+*/
 
 #include<stdio.h>
 #include<string.h>

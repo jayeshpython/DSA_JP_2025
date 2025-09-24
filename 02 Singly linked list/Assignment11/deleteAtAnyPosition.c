@@ -1,4 +1,5 @@
 
+//write a c program to Create a Singly linked list and Delete the node in the given position
 
 #include <stdio.h>
 #include <stdlib.h>

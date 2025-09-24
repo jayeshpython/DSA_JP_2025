@@ -1,4 +1,5 @@
 
+//write a c program to Create a doubly linked list, accept a key, and delete the node which contains the key element. 
 
 #include <stdio.h>
 #include <stdlib.h>

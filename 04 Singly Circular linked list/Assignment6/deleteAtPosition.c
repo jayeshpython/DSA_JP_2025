@@ -1,4 +1,5 @@
 
+//write a c program to Create a circular singly linked list and delete the node which key matches the user's key
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -127,7 +128,9 @@ scl* deletion(scl* last){
         last = p;
         return last;
     }
-    printf("\n\tKey not found.");
+	else{
+		printf("\n\tKey not found.");
+	}
     return last;
 }
 

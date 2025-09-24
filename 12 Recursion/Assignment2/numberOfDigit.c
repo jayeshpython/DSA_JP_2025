@@ -1,4 +1,6 @@
 
+//Accept a  number 'N' and Count the number of digits in the number using recursion
+
 #include <stdio.h>
 
 long long int numberOfDigit(long long int);

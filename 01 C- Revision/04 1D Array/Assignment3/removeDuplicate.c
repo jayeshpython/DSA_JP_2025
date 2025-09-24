@@ -1,3 +1,9 @@
+
+/*
+- Write a C program which allocates an array dynamically.
+	- Implement logic that removes duplicate elements from the array. 
+*/
+
 /*
 #include <stdio.h>
 int main(){

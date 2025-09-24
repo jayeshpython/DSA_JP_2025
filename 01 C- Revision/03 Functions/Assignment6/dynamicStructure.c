@@ -1,5 +1,10 @@
 
-
+/*
+write a  C program to pass an array of structures to a user define function
+   - create a structure which accepts student details.
+   - create an array of structure for "N" number of students.
+   - Pass  array  of structure to a function as an argument and search for the perticular student details.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 

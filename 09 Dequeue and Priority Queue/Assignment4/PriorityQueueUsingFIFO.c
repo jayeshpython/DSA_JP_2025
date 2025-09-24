@@ -1,4 +1,5 @@
 
+//Write a C program to implement a Priority Queue using an Array with FIFO
 
 #include <stdio.h>
 #include <stdlib.h>

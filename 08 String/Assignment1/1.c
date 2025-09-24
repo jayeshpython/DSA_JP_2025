@@ -1,4 +1,5 @@
 
+//Accept a string and copy the string into another string with and without using the inbuilt copy function 
 
 #include <stdio.h>
 #include <string.h>

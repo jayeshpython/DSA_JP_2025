@@ -1,4 +1,5 @@
 
+//Write a separate function to copy one string into another string 
 
 #include <stdio.h>
 #include <stdlib.h>

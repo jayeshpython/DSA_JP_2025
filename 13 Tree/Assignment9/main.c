@@ -1,4 +1,6 @@
 
+//Write a C program to create BST and Count Odd and even elements in the BST
+
 #include "BST.h"
 
 int main(){

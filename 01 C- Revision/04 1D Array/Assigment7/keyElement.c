@@ -1,4 +1,6 @@
 
+//Accept n elements in an array and search a perticular element 
+
 #include <stdio.h>
 int main(){
 	

@@ -1,5 +1,8 @@
 
 
+/*
+write a c program to Create a Singly linked list and Insert a node at Head
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
